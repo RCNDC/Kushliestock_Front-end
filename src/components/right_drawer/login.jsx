@@ -60,7 +60,7 @@ const Login = () => {
       })
       .then(
         (response) => {
-          ;
+          console.log(response);
           if (response.data.emailFailure) {
             dispatch(loginActions.setEmailErr("Email address does not exist!"));
           } else if (response.data.passwordFailure) {
@@ -85,17 +85,13 @@ const Login = () => {
       );
   };
   const googleAuth = () => {
-    // window.location.href = ;
-    
-    window.open(`${url}auth/google`, '_blank').focus();
+    window.location.href = `${url}auth/google`;
   }
   const facebookAuth = () => {
-    window.open(`${url}auth/facebook`, '_blank').focus();
-    // window.location.href = `${url}auth/facebook`;
+    window.location.href = `${url}auth/facebook`;
   }
   const linkedinAuth = () => {
-    window.open(`${url}auth/linkedin`, '_blank').focus();
-    // window.location.href = `${url}auth/linkedin`;
+    window.location.href = `${url}auth/linkedin`;
   }
   return (
     <div className="login">
@@ -157,11 +153,11 @@ const Login = () => {
           size="40px"
           onClick={() => googleAuth()}
         />
-        {/* <FacebookLoginButton
+        <FacebookLoginButton
           style={{ margin: ".71em 0 ", width: "100%" }}
           size="40px"
           onClick={() => facebookAuth()}
-        /> */}
+        />
          <LinkedInLoginButton
           style={{ margin: ".71em 0 ", width: "100%" }}
           size="40px"

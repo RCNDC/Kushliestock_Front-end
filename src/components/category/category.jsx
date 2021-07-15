@@ -14,7 +14,7 @@ const Category = (props) => {
 
   return (
     <div className="category">
-      <Title title={route} />
+      <Title title={route}/>
 
       {route === "categories" ? (
         <CategoriesList/>

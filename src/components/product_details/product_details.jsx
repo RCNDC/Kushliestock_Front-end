@@ -8,7 +8,8 @@ import ImageGallery from "./image_gallery";
 // a component that displays a product detail
 const ProductDetails = () => {
     
-    return <div className="product-details">
+    return 
+    <div className="product-details">
        <Row>
            <Col md = {6}>
                <div className="images">

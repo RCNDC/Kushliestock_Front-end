@@ -156,8 +156,7 @@ const loggedUser = useSelector(state => state.login.loggedUser)
                 }}
               />
               <div className="form-error">{password3Err}</div>
-            </div>
-
+            </div>           
             <div className="form-grp">
               {" "}
               <div className="loading">{false && <CircularProgress />}</div>

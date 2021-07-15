@@ -7,9 +7,7 @@ import { useEffect } from "react";
 import { navbarSlice } from "../../slices/navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router";
-
 const Navbar = () => {
-
   const showButtomNav = useMediaQuery({ query: "(max-width: 576px)" });
   const showNav = useMediaQuery({ query: "(min-width: 1100px)" });
   const navbarActions = navbarSlice.actions;
@@ -26,20 +24,16 @@ const Navbar = () => {
    
   }
   window.addEventListener("scroll", handleScroll);
-
-
   if(showButtomNav) {
     document.body.style.marginTop = '72px'
   }
   else {
     document.body.style.marginTop = '0'
   }
-
   return (
     <div className={showButtomNav  ? 'navbar  navbar-stick': stickNavbar ? 'navbar navbar-stick' : 'navbar'}>
       {showNav ? (
         <>
-          
           <Logo />
           <Nav /> <Icons number={4} />
         </>

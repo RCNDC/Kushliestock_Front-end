@@ -1,8 +1,8 @@
 .navbar {
-  @include flex;
   // border:1px solid green;
   justify-content: space-between;
-
+display: flex;
+//position:fixed;
   // padding: 1em;
   padding: 0 1em;
   a {
@@ -247,12 +247,13 @@
     cursor: pointer;
   }
 }
-.navbar-stick {
+.navbar-stick 
+{
   animation: 0.25s ease-out 0s 1 slideInFromTop;
-  position: fixed;
+  //position: fixed;
   top: 0;
   left: 0;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+ //box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   z-index: 800;
   background: white;
   width: 100%;

@@ -26,7 +26,6 @@ export const cartSlice = createSlice({
     clearCart: (state) => {
       state.cartItems = [];
     },
-
     addCartItem: (state, action) => {
       let itemExist = false;
 
@@ -78,7 +77,9 @@ export const cartSlice = createSlice({
               draggable: true,
               progress: undefined,
             });
-          } else {
+          }
+         
+          else {
             cartItem.quantity =  action.payload.amount;
           }
         }

@@ -125,9 +125,13 @@
         .login-bottom-item {
           display: flex;
           .text {
-            color: #888;
+            color: #878787;
+           // color: $color7;
+              //  cursor: pointer;
           }
           .link {
+            color:		#0a0a0a;
+            text-decoration-color:  #888;
             margin-left: 0.5em;
             &:hover {
               color: $color7;

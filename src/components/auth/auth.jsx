@@ -13,8 +13,6 @@ const Auth = (props) => {
     const value = queryString.parse(props.location.search);
     const token = value.token;
     const user_id = value.user_id;
-    
-
     if (token && user_id) {
       localStorage.setItem("token", token);
       localStorage.setItem("user_id", user_id);

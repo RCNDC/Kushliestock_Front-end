@@ -1,11 +1,12 @@
-import CartList from "./cart_list";
-import Title from "./title";
-
+import CartList1 from "./cart_list1";
+import Title1 from "./title1";
+ 
+import Ordernow from './ordernow'
 const Cart = () => {
     return (
         <div className="cart">
-             <Title/>
-           <CartList/>
+             <Title1/>
+           <CartList1/>
         </div>
       
     );

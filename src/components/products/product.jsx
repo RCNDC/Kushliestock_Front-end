@@ -14,9 +14,6 @@ import { useMediaQuery } from "react-responsive";
 import Skeleton from "react-loading-skeleton";
 import { ToastContainer, toast } from "react-toastify";
 import Rating from "@material-ui/lab/Rating";
-
-
-
 const searchIcon = <FontAwesomeIcon icon={faHeart} />;
 const shoppingCartIcon = <FontAwesomeIcon icon={faShoppingCart} />;
 
@@ -36,7 +33,6 @@ export const Product = ({
   const wishlistActions = wishlistSlice.actions;
   const isUserLogged = useSelector((state) => state.login.isUserLogged);
   const [productImage, setProductImage] = useState("");
-
   useEffect(() => {
     setProductImage("");
     axios.get(`${url}user/getProductImages/${details.id}`).then(
@@ -77,7 +73,7 @@ export const Product = ({
         {!md && (
           <div className={"product-buttons"}>
             <div className="wishlist-cart">
-              {" "}
+              {/* {" "}
               {wishlistBtn && (
                 <div
                   className="product-btn btn btn-block"
@@ -112,10 +108,10 @@ export const Product = ({
                       progress: undefined,
                     });
                   }}
-                >
+                  >
                   <div className="product-btn-content">{searchIcon} +</div>
                 </div>
-              )}
+              )} */}
               <div
                 className="product-btn btn btn-block"
                 onClick={(e) => {
@@ -156,7 +152,7 @@ export const Product = ({
                   });
                 }}
               >
-                <div className="product-btn-content">{shoppingCartIcon} +</div>
+                <div className="product-btn-content">{shoppingCartIcon} + Add To Order List</div>
               </div>
             </div>
 

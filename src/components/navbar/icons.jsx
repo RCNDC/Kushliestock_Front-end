@@ -65,7 +65,7 @@ const Icons = ({ number = 4 }) => {
         </>
       )}
 
-      <div
+      {/* <div
         className="icon"
         onClick={() => {
           showRightDrawer("wishlist");
@@ -73,7 +73,7 @@ const Icons = ({ number = 4 }) => {
       >
         {wishlistIcon}
         <div className="badge">{numberOfProductsInWishlist}</div>
-      </div>
+      </div> */}
       <div
         className="icon"
         onClick={() => {

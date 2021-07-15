@@ -8,6 +8,9 @@ import { productSlice } from "../../slices/product";
 import { Product } from "../products/product";
 import Categories from "./categories";
 import Description from "./description";
+
+import BreedType from "./breed_type";
+
 import Details from "./details";
 import ImageGallery from "./image_gallery";
 import Review from "./review";

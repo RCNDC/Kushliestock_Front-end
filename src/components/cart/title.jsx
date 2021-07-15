@@ -6,7 +6,7 @@ const Title = () => {
       
     >
       {/* <img src={titleBackground} alt=""/> */}
-      <div className="main-title">Shopping Cart</div>
+      <div className="main-title">Your Order List</div>
      
     </div>
   );

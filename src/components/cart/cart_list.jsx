@@ -69,11 +69,7 @@ const CartList = () => {
 
     axios.post(`${url}user/createCart`, cartItemsForDb).then(
       (response) => {
-        if (response.data.success) {
-       
-        
-
-        
+        if (response.data.success) {        
         }
         dispatch(cartActions.setSavingCart(false));
         // ;

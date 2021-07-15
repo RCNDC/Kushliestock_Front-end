@@ -14,9 +14,13 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { rightDrawerSlice } from "../../slices/right_drawer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Detail from "../product_details/details";
+import {Link} from 'react-router-dom';
+import Ordernow from  '../cart/ordernow';
 
 const searchIcon = <FontAwesomeIcon icon={faHeart} />;
 const shoppingCartIcon = <FontAwesomeIcon icon={faShoppingCart} />;
+
 
 // component that shows a detailed description of a product
 const Details = ({ colorArr,sizeArr }) => {
@@ -40,44 +44,15 @@ const Details = ({ colorArr,sizeArr }) => {
   return (
     <>
       <div className="detail-header">
-        <div className="detail-title">Product Name</div>
-        <div className="text">{product.Name}</div>{" "}
-        <div className="detail-title">Description</div>
-
-        <div className="description" style={{ whiteSpace: "pre-line" }}>
-          {product.Description}
-        </div>
-        {product.color && (
-          <div className="color">
-            <div className="detail-title">Color</div>
-
-            <CirclePicker colors={colorArr} />
-          </div>
-        )}
-        {product.size && (
-          <div className="size">
-            <div className="detail-title">Size</div>
-            <div className="size-content">
-              {sizeArr.map((item) => {
-                return <div className="size-item">{item}</div>;
-              })}
-            </div>
-          </div>
-        )}
-         <div className="detail-title">Price</div>
-        <div className="price">
-          {product.Price ? product.Price + " birr" : ""}
-        </div>
-          <div className="detail-title">Rating</div>
-          <div className="rating">
-          {console.log(product.totalRate)}
-          <Rating name="read-only" value={parseInt(product.totalRate)} readOnly />
-        </div>
+       
+          <Detail/>
        
       </div>
 
       <div className="detail-buttons">
-        <div
+
+       
+        {/* <div
           className="wishlist-btn btn btn-block"
 
           onClick={() => {
@@ -105,11 +80,9 @@ const Details = ({ colorArr,sizeArr }) => {
               progress: undefined,
             });
           }}
-        >
-          <div className="product-btn-content">
-            {searchIcon} Add to wishlist
-          </div>
-        </div>
+        > */}
+          
+        {/* </div> */}
         <div
           className="cart-btn btn btn-block"
           onClick={() => {
@@ -124,7 +97,7 @@ const Details = ({ colorArr,sizeArr }) => {
                 draggable: true,
                 progress: undefined,
               });
-              return;
+              return
             }
 
             dispatch(
@@ -135,7 +108,7 @@ const Details = ({ colorArr,sizeArr }) => {
                 selectedSize: "",
               })
             );
-            toast.success("Product added to cart", {
+            toast.success("Product added to Your order list", {
               position: "bottom-right",
               autoClose: 1700,
               hideProgressBar: true,
@@ -147,9 +120,19 @@ const Details = ({ colorArr,sizeArr }) => {
           }}
         >
           <div className="product-btn-content">
-            {shoppingCartIcon} Add to cart
+            {shoppingCartIcon} Add to Order
           </div>
         </div>
+
+        <div className="cart-btn btn btn-block">
+            <Link to='/cart'>
+              <button style={{backgroundColor:'rgb(180, 60, 45)', color:'white', borderStyle:'none'}}>
+              {shoppingCartIcon} ORDER NOW
+              </button>
+            </Link>
+            
+          </div>
+
       </div>
       <div className="reviews-selector" onClick={() =>{ showRightDrawer('reviews')}}> <div className="text">Reviews</div> <div className="icon">{rightIcon}</div></div>
     </>

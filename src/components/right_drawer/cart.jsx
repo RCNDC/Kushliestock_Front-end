@@ -345,14 +345,14 @@ const Cart = () => {
                 </div>
               </div>
             </div>
-            <Link to={"/cart"}>
+            <Link to={"/cartone"}>
               {" "}
               <div className="btn view-cart btn-block" onClick={hideDrawer}>
-                View Cart
+                View Order
               </div>{" "}
             </Link>
             <div className="btn view-cart btn-block" onClick={saveCart}>
-              Save Cart
+              Save Order
             </div>{" "}
           </div>
         )}

@@ -12,7 +12,7 @@ const Nav = () => {
   const location = useLocation();
   const moreIcon = <FontAwesomeIcon icon={faEllipsisH} />;
   const linkStyle = {
-    color: "#666",
+    color: "#66",
     textDecoration: "none",
   };
   const dispatch = useDispatch();

@@ -18,8 +18,6 @@ const Profile = () => {
   useEffect(() => {
    
     if (!localStorage.getItem("user_id") || !localStorage.getItem("token")) {
-      
-      
     }
        else {
       // let userId = localStorage.getItem("user_id");

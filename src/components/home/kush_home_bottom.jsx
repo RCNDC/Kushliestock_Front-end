@@ -1,3 +1,4 @@
+import React from "react";
 import KushNewsletter from "./kush_newsletter"
 import KushTestimonials from "./kush_testimonials"
 

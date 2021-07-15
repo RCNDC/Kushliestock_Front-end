@@ -12,6 +12,19 @@ import {
   Link,
   useLocation,
 } from "react-router-dom";
+import Slaughter from "./components/home_menu/slaughter";
+import Fattening from "./components/home_menu/fattening";
+import LatestVideo from "./components/home_menu/latestvideo";
+import Minning from "./components/home_menu/minning";
+import PartnerAgent from "./components/home_menu/partneragent";
+import Pharmaceuticals from "./components/home_menu/pharmaceuticals";
+import sub from "./components/home_menu/sub";
+import RealEstates from "./components/home_menu/realestates";
+import Shipping from "./components/home_menu/shipping";
+
+import Virtualportals from './components/home/virtualportals';
+import Investment from './components/home/investment';
+import Services from './components/home/services';
 import Navbar from "./components/navbar/navbar";
 import PageNotFound from "./components/utils/page_not_found";
 import Footer from "./components/footer/footer";
@@ -21,6 +34,7 @@ import ProductModal from "./components/product_details/product_modal";
 import Profile from "./components/profile/profile";
 import ChangePassword from "./components/profile/change_password";
 import Cart from "./components/cart/cart";
+import Cartone from "./components/cart/cartone"
 import Wishlist from "./components/wishlist/wishlist";
 import RegistrationSuccess from "./components/success_message/registration_success";
 import axios from "axios";
@@ -53,6 +67,10 @@ import Pricing from "./components/footer/pricing";
 import FAQ from "./components/footer/faq";
 import Orders from "./components/orders/orders";
 import ContactUs from "./components/footer/contact_us";
+import Partner from "./components/footer/partners";
+import Advertise from "./components/footer/advertise";
+import Membership from "./components/footer/membership";
+
 // import AdminSellerLogin from "./components/admin_seller_login/admin_seller_login";
 // import { useLocation } from 'react-router-dom'
 import Breadcrumb from "./components/utils/breadcrumb";
@@ -151,6 +169,7 @@ function App() {
               {/* <Home /> */}
             </Route>
             <Route path="/categories" component={Category}></Route>
+
             <Route path="/search" component={SearchPage}></Route>
             {/* <Route path="/product" component={ProductDetails}></Route> */}
             <Route path="/profile">
@@ -305,12 +324,289 @@ function App() {
               </>
             </Route>
 
+            <Route path="/partners">
+              <>
+                <div className="application">
+                  <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Partners</title>
+                    <meta
+                      name="description"
+                      content="Our Partners "
+                    />
+                    {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                  </Helmet>
+                </div>
+                <Partner />
+              </>
+            </Route>
+
+            <Route path="/membership">
+              <>
+                <div className="application">
+                  <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Membership</title>
+                    <meta
+                      name="description"
+                      content="Membership "
+                    />
+                    {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                  </Helmet>
+                </div>
+                <Membership />
+              </>
+            </Route>
+
+            <Route path="/advertise">
+              <>
+                <div className="application">
+                  <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Advertise</title>
+                    <meta
+                      name="description"
+                      content="Advertise "
+                    />
+                    {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                  </Helmet>
+                </div>
+                <Advertise />
+              </>
+            </Route>
+
+           
+
+            <Route path="/investment">
+              <>
+                <div className="application">
+                  <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Investment</title>
+                    <meta
+                      name="description"
+                      content="investment "
+                    />
+                    {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                  </Helmet>
+                </div>
+                <Investment />
+              </>
+            </Route>
+
+            <Route path="/services">
+              <>
+                <div className="application">
+                  <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Services</title>
+                    <meta
+                      name="description"
+                      content="services "
+                    />
+                    {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                  </Helmet>
+                </div>
+                <Services />
+              </>
+            </Route>
+
+            <Route path="/slaughter">
+              <>
+                <div className="application">
+                  <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Slaughter</title>
+                    <meta
+                      name="description"
+                      content="services "
+                    />
+                    {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                  </Helmet>
+                </div>
+                <Slaughter/>
+              </>
+            </Route>
+
+            <Route path="/Fattening">
+              <>
+                <div className="application">
+                  <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Virtual portals</title>
+                    <meta
+                      name="description"
+                      content="services "
+                    />
+                    {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                  </Helmet>
+                </div>
+                <Fattening/>
+              </>
+            </Route>
+
+            <Route path="/Pharmaceuticals">
+              <>
+                <div className="application">
+                  <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Virtual portals</title>
+                    <meta
+                      name="description"
+                      content="services "
+                    />
+                    {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                  </Helmet>
+                </div>
+                <Pharmaceuticals/>
+                <sub/>
+              </>
+            </Route>
+            <Route path="/sub">
+              <>
+                <div className="application">
+                  <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Virtual portals</title>
+                    <meta
+                      name="description"
+                      content="services "
+                    />
+                    {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                  </Helmet>
+                </div>
+                <Route path="/Pharmaceuticals">
+              <>
+                <div className="application">
+                  <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Virtual portals</title>
+                    <meta
+                      name="description"
+                      content="services "
+                    />
+                    {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                  </Helmet>
+                </div>
+           
+                <sub/>
+              </>
+            </Route>
+                <sub/>
+              </>
+            </Route>
+
+            <Route path="/Minning">
+              <>
+                <div className="application">
+                  <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Virtual portals</title>
+                    <meta
+                      name="description"
+                      content="services "
+                    />
+                    {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                  </Helmet>
+                </div>
+                <Minning/>
+              </>
+            </Route>
+
+            <Route path="/RealEstates">
+              <>
+                <div className="application">
+                  <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Virtual portals</title>
+                    <meta
+                      name="description"
+                      content="services "
+                    />
+                    {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                  </Helmet>
+                </div>
+                <RealEstates/>
+              </>
+            </Route>
+
+            <Route path="/Shipping">
+              <>
+                <div className="application">
+                  <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Virtual portals</title>
+                    <meta
+                      name="description"
+                      content="services "
+                    />
+                    {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                  </Helmet>
+                </div>
+                <Shipping/>
+              </>
+            </Route>
+
+            <Route path="/PartnerAgent">
+              <>
+                <div className="application">
+                  <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Virtual portals</title>
+                    <meta
+                      name="description"
+                      content="services "
+                    />
+                    {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                  </Helmet>
+                </div>
+                <PartnerAgent/>
+              </>
+            </Route>
+
+            <Route path="/LatestVideo">
+              <>
+                <div className="application">
+                  <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Virtual portals</title>
+                    <meta
+                      name="description"
+                      content="services "
+                    />
+                    {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                  </Helmet>
+                </div>
+                <LatestVideo/>
+              </>
+            </Route>
+
+            
+            <Route path="/virtualportals">
+              <>
+                <div className="application">
+                  <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Virtual portals</title>
+                    <meta
+                      name="description"
+                      content="services "
+                    />
+                    {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+                  </Helmet>
+                </div>
+                <Virtualportals />
+              </>
+            </Route>
             {/* <Route path="/products">
             {" "}
             <Home />
           </Route> */}
             <Route path="/cart">
               <Cart />
+            </Route>
+            <Route path="/cartone">
+              <Cartone />
             </Route>
             <Route path="/orders">
               <Orders />
@@ -335,10 +631,10 @@ function App() {
             </Route>
           </Switch>
         </main>
-        {md ? <div className="py-5"></div> : <Footer />}
+        {md ? <div className="py-5"></div> : <Footer />
+        }
       </HashRouter>
     </div>
   );
 }
-
 export default App;

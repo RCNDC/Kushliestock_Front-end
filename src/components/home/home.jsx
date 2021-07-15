@@ -54,9 +54,18 @@ const Home = () => {
           </>
         )}
         <KushHomeTop/>
-        <Products />
+        <Products/>
         <KushBrands/>
-     <KushHomeBottom/>
+        <h2 style={{fontStyle:'normal', fontFamily:'arial', fontWeight:'bold', textDecoration:'none'}}>ADVERTISING OPPORTUNITIES</h2>
+        <p style={{backgroundColor:'white', textIndent:'1cm'}}> We offer several ways of  
+           promoting your company through our website.
+           We offer banners, several promotion memberships for your listing on our website, 
+           the possiblity of emailing members through our website and more.
+           Feel free to contact us here to inform us about the possibilities.
+          You can always start with registering your company for free, which gives you a 
+          listing on our website and the possiblity to access our website.
+        </p>
+        <KushHomeBottom/>
         {false && (
           <>
             <div className="ad">

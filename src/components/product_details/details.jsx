@@ -1,4 +1,4 @@
-import { faShoppingCart, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart, faHeart, faWeight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -14,6 +14,9 @@ import Rating from "@material-ui/lab/Rating";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { rightDrawerSlice } from "../../slices/right_drawer";
+
+import '../../css/details.css';
+
 const searchIcon = <FontAwesomeIcon icon={faHeart} />;
 const shoppingCartIcon = <FontAwesomeIcon icon={faShoppingCart} />;
 
@@ -34,121 +37,34 @@ const Details = ({ colorArr, sizeArr }) => {
     document.body.style.overflow = "hidden";
   };
 
+   const Packaging = ["Per-Head  ", "Per-Leg  ", "Per-Something  "];
+   const Status = ["Fit-for-Slaughter  ", "Fit-for-Something  "];
+   const Delivery = ["FOB-Djibouti  ", "To-Home  ", "To-Somewhere  "];
+// This is Product details to be display when we click on each product
   return (
     <>
-      <div className="detail-header">
-        <div className="detail-title">Product Name</div>
-        <div className="text">{product.Name}</div>{" "}
-        <div className="detail-title">Description</div>
-        <div className="description" style={{ whiteSpace: "pre-line" }}>
-          {product.Description}
-        </div>
-        {product.color && (
-          <div className="color">
-            <div className="detail-title">Color</div>
+    <div className="productDetail">
+        <div className="detail-title">Breed Type:</div>
+        <div className="breed" >{product.breed}</div>
 
-            <CirclePicker colors={colorArr} />
-          </div>
-        )}
-        {product.size && (
-          <div className="size">
-            <div className="detail-title">Size</div>
-            <div className="size-content">
-              {sizeArr.map((item) => {
-                return <div className="size-item">{item}</div>;
-              })}
-            </div>
-          </div>
-        )}
-        <div className="detail-title">Price</div>
-        <div className="price">
-          {product.Price ? product.Price + " birr" : ""}
-        </div>
-        <div className="detail-title">Rating</div>
-        <div className="rating">
-          {console.log(product.totalRate)}
-          <Rating
-            name="read-only"
-            value={parseInt(product.totalRate)}
-            readOnly
-          />
-        </div>
-      </div>
+        <div className="detail-title">Average Weight:</div>
+        <div className="weight">{product.weight}</div>
 
-      {/* <div className="detail-buttons">
-        <div
-          className="wishlist-btn btn btn-block"
-          onClick={() => {
-            if (!isUserLogged) {
-              toast.info("Log in or register to add product to wishlist ! ", {
-                position: "top-left",
-                autoClose: 2000,
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-              });
-              return;
-            }
+        <div className="detail-title">Available Quantity:</div>
+        <div className="quantity">{product.quantity}</div>
+        <div className="detail-title">Available price:</div>
+        <div className="quantity">{product.price}</div>
+        <div className="detail-title">Packaging:</div>
+        <div class="packaging">{Packaging  }</div>
+        <div className="detail-title">Get a Quote:</div>
+        <div className="quote">{product.quote}</div>
 
-            dispatch(wishlistActions.addProduct(product));
-            toast.success("Product added to wishlist", {
-              position: "bottom-right",
-              autoClose: 1700,
-              hideProgressBar: true,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-            });
-          }}
-        >
-          <div className="product-btn-content">
-            {searchIcon} Add to wishlist
-          </div>
-        </div>
-        <div
-          className="cart-btn btn btn-block"
-          onClick={() => {
-            if (!isUserLogged) {
-              toast.info("Log in or register to add product to cart ! ", {
-                position: "top-left",
-                autoClose: 2000,
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-              });
-              return;
-            }
+        <div className="detail-title">Status:</div>
+        <span className="status">{Status}</span>
 
-            dispatch(
-              cartActions.addCartItem({
-                product: product,
-                quantity: 1,
-                selectedColor: "",
-                selectedSize: "",
-              })
-            );
-            toast.success("Product added to cart", {
-              position: "bottom-right",
-              autoClose: 1700,
-              hideProgressBar: true,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-            });
-          }}
-        >
-          <div className="product-btn-content">
-            {shoppingCartIcon} Add to cart
-          </div>
-        </div>
-      </div> */}
-      {/* <div className="reviews-selector" onClick={() =>{ showRightDrawer('reviews')}}>Reviews</div> */}
+        <div className="detail-title">Delivery:</div>
+        <div className="delivery">{Delivery}</div>
+     </div>
     </>
   );
 };

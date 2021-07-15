@@ -14,14 +14,17 @@ const CartListHeader = () => {
               Quantity
             </Col>
             <Col lg={1}>
-              Color
+              Breed Type
             </Col>
             <Col lg={1}>
-              Size
+              Packaging
             </Col>
             <Col lg={1} style={{textAlign:'right'}}>
-              Total
+              Total Price
             </Col>
+            <col>
+              
+            </col>
         </Row>
        
     </div>

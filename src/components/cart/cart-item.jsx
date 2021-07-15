@@ -7,18 +7,18 @@ import { cartSlice } from "../../slices/cart";
 import { useDispatch } from "react-redux";
 import { CirclePicker } from "react-color";
 import { useState } from "react";
+import Select from "react-dropdown-select";
+
+//import {Packaging} from "../product_details/details";
 
 // a single cart item in a cart list
-const CartItem = ({ cartItem, productImage }) => {
+  const CartItem = ({ cartItem, productImage }) => {
   const removeIcon = <FontAwesomeIcon icon={faTrashAlt} />;
   const plusIcon = <FontAwesomeIcon icon={faPlus} />;
   const minusIcon = <FontAwesomeIcon icon={faMinus} />;
   const cartActions = cartSlice.actions;
   const dispatch = useDispatch();
   const [showEnterAmount, setShowEnterAmount] = useState(false);
-
-  
-
   const removeCartItem = (id) => {
     dispatch(cartActions.removeCartItem(id));
   };
@@ -36,7 +36,7 @@ const CartItem = ({ cartItem, productImage }) => {
           <div className="product">
             <img className="img-fluid" src={productImage} alt="" />
             <div className="product-left">
-              <div className="product-title">{cartItem.product.Name}</div>
+             <div className="product-title">{cartItem.product.Name}</div>
               <div
                 className="remove icon"
                 onClick={() => {
@@ -51,18 +51,11 @@ const CartItem = ({ cartItem, productImage }) => {
         <Col lg={1}>
           <div className="price">{cartItem.product.Price + " birr"}</div>
         </Col>
-        <Col lg={2}>
+        <Col lg={1}>
           <div className="quantity">
             <div className="inner">
               {" "}
-              <div
-                className="minus icon"
-                onClick={() => {
-                  decreaseQuantity(cartItem.product.id);
-                }}
-              >
-                {minusIcon}
-              </div>
+              {}
               <div className="amount">
                 {" "}
                 {!showEnterAmount ? (
@@ -79,7 +72,7 @@ const CartItem = ({ cartItem, productImage }) => {
                     type="text"
                     className="amount-input"
                     autoFocus
-                    defaultValue={cartItem.quantity}
+                    
                     onBlur={(e) => {
                       if (e.target.value) {
                         dispatch(
@@ -104,84 +97,25 @@ const CartItem = ({ cartItem, productImage }) => {
                         setShowEnterAmount(false);
                       }
                     }}
-                    // value={cartItem.quantity}
-                    // onChange={(e) => {
-                    //   if (e.target.value) {
-                    //     dispatch(
-                    //       cartActions.changeQuantity({
-                    //         id: cartItem.product.id,
-                    //         amount: e.target.value,
-                    //       })
-                    //     );
-                    //   }
-                    // }}
                   />
                 )}
               </div>
-              <div
-                className="plus icon"
-                onClick={() => {
-                  increaseQuantity(cartItem.product.id);
-                }}
-              >
-                {plusIcon}
-              </div>
+              {}
             </div>
           </div>
         </Col>
-        <Col lg={1}>
-          <div className="color">
-            {cartItem.product.color ? (
-              <CirclePicker
-                width="20px"
-                color={cartItem.selectedColor}
-                onChange={(color, event) => {
-                  console.log(color.hex);
-                  dispatch(
-                    cartActions.setColor({
-                      id: cartItem.product.id,
-                      color: color.hex,
-                    })
-                  );
-                }}
-                colors={cartItem.product.color.split(",")}
-              />
-            ) : (
-              ""
-            )}
-          </div>
+        {}
+        {}
+        <Col>
+
         </Col>
-        <Col lg={1}>
-          <div className="size">
-            {cartItem.product.size ? (
-              <div className="size-content">
-                {" "}
-                {cartItem.product.size.split(",").map((item) => {
-                  return (
-                    <div
-                      className={
-                        item === cartItem.selectedSize
-                          ? "size-item selected"
-                          : "size-item"
-                      }
-                      onClick={() => {
-                        dispatch(
-                          cartActions.setSize({
-                            id: cartItem.product.id,
-                            size: item,
-                          })
-                        );
-                      }}
-                    >
-                      {item}
-                    </div>
-                  );
-                })}
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
+        <Col>
+          <select className="amount" style={{width:'2.7cm', height:'1.5cm', display:'flex', alignContent:'center'}}>
+            <option value="grapefruit" >Per-Something</option>
+            <option value="lime">Per-Leg</option>
+            <option selected value="coconut">Per-Head</option>
+          </select>
+
         </Col>
         <Col lg={1}>
           <div className="total">

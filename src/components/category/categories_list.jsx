@@ -32,6 +32,7 @@ const CategoriesList = () => {
     <div className="adimera-categories">
       <Row style ={{justifyContent:'center'}}>
         {categories.map((item) => {
+          
           return (
             <Col sm={12} md={4}>
               <div className="category">

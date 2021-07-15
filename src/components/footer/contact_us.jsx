@@ -52,7 +52,11 @@ const ContactUs = () => {
           <div className="contact-info"> +251 943 141 717 </div>
           <div className="contact-info"> P.O. box 230/1070 </div>
           <div className="contact-info"> Addis Ababa, Ethiopia </div>
+    
         </div>
+      
+        
+
 
         <div style={{ margin: "1em 0" }} className="contact-us-item col-md-4">
           <div className="social-icons">

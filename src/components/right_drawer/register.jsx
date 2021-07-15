@@ -6,7 +6,6 @@ import axios from "axios";
 import { url } from "../../utils/url";
 import { registerUser } from "../../services/register_user";
 import { TuneRounded } from "@material-ui/icons";
-
 const Register = () => {
   const rightDrawerActions = rightDrawerSlice.actions;
   const registerActions = registerSlice.actions;
